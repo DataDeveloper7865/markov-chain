@@ -40,8 +40,7 @@ class MarkovMachine {
     let markovArray = [];
     let markovObj = this.makeChains();
     let randKey = this.startRandomWord(markovObj);
-    console.log("getTextrand key: ", randKey)
-    while (markovArray.length < numWords) {
+    while (markovArray.length < numWords && randKey !== null) {
       let randVal = this.getRandomWordInArray(markovObj, randKey);
       markovArray.push(randVal);
       randKey = randVal;
